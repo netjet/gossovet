@@ -1,0 +1,142 @@
+//Imports
+@import "fonts/fonts.less";
+
+//Resets
+* {outline: none;}
+
+//Variables
+@first-bg-color: #1b242d;
+@second-bg-color: #0f1a24;
+
+//Colors variables
+@white-color: #fff;
+@d-blue-color: #1b242d;
+@blue-color: #2980b9;
+@l-blue-color: #3498db;
+@a-blue-color: #2b7aad; //color on press
+@l-gray-color: #ecf0f1;
+@d-gray-color: #7f8c8d;
+
+
+//Pallete
+.blue {
+  background: @blue-color;
+  color: #fff;
+}
+
+.blue:hover,
+.blue:focus {
+  background: @l-blue-color;
+}
+
+.blue:active {
+  background: @a-blue-color;
+}
+
+//Sizes 
+.small {
+  height: 30px;
+  font-size: 0.938em;
+}
+
+.middle {
+  height: 40px;
+  font-size: 1em;
+}
+
+.big {
+  height: 50px;
+  font-size: 1.188em;
+}
+
+//Border radius
+.rounded(@radius: 3px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+//Transition
+.transition(@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: all @duration @ease;
+  -moz-transition: all @duration @ease;
+  -o-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+
+.outline(@first-axis: 0, @second-axis: 0px, @third-axis: 0, @blur: 2px, @out-color: @l-blue-color){
+  -webkit-box-shadow: @first-axis @second-axis @third-axis @blur @out-color;
+  -moz-box-shadow: @first-axis @second-axis @third-axis @blur @out-color;
+  box-shadow: @first-axis @second-axis @third-axis @blur @out-color;
+}
+
+
+//Placeholder {
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: @d-gray-color;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: @d-gray-color;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: @d-gray-color;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: @d-gray-color;
+}
+
+//common elements
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'SegoeUI normal';
+  font-size: 100%;
+  background-color: @first-bg-color;
+}
+
+h1 {
+  font-family: 'SegoeUI semilight';
+  font-size: 1.875em;
+  color: #fff;
+}
+
+b {
+  font-family: 'SegoeUI semibold';
+  color: @blue-color;
+}
+
+//Forms
+input[type="text"],
+input[type="password"] {
+  height: 40px;
+  background: @l-gray-color;
+  color: @d-blue-color;
+  padding: 0 10px;
+  border: 0;
+  font-family: 'SegoeUI semibold';
+  .rounded;
+  margin: 0 0 10px 0;
+  outline-color: @l-blue-color;
+  outline-width: 10px;
+}
+
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background: @white-color;
+  .outline;
+}
+
+//Buttons 
+button {
+  border: 0;
+  padding: 0 10px;
+  font-family: 'SegoeUI semibold';
+  .rounded;
+  .transition;
+}
